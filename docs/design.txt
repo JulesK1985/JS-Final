@@ -1,0 +1,271 @@
+Problem Statement:
+A program that defines "natural supports" and prompts the user to list their own natural supports.
+If the user wants additional information on what to do if they have no natural supports, or their
+natural supports are unavailable, it will prompt them to answer questions regarding their current mental health.
+If appropriate the user will be provided with contact information for local resources (in Wisconsin) which could be
+either their county's crisis line or a talk-line.
+
+Page 1:
+Nouns: Natural supports
+
+Verbs: Prompt, display list
+
+I: Natural supports
+
+P: Collect natural supports in array
+
+O: Display list 
+
+Psuedocode:
+NaturalSupports
+  initialize supports array
+  initialize userSupports to ""
+  initialize supportsloop to true
+  initialize totalSupports to 0
+  initialize userMessage to ""
+  initialize userList to ""
+  
+  WHILE supportsloop is true THEN
+    prompt for userSupports with "Enter on of your natural supports, or leave blank to stop."
+    IF userSupports is blank THEN
+      end supportsloop
+    ELSE
+      add userSupports to the array supports
+    ENDIF
+  ENDWHILE
+  
+  calculate number in array with supports.length
+  
+  FOR array index < supports.length increment index by 1 THEN
+    initialize userList to array length
+  ENDFOR
+  
+  set userMessage to "Here is a list of your supports:" + userList
+  
+  display list in HTML
+  
+END
+
+
+Testing Inputs:
+
+TEST 1:
+
+          Inputs: Therapist, Counselor, Co-workers, Friends, Family, (blank)
+
+Expected Outcome: Here is a list of your supports:
+                  Therapist
+                  Counselor
+                  Co-workers
+                  Friends
+                  Family
+
+  Actual Outcome: Here is a list of your supports:
+                  Therapist
+                  Counselor
+                  Co-workers
+                  Friends
+                  Family
+
+
+TEST 2:
+
+          Inputs: The Doctor, Rose Tyler, K-9, Bannakaffalatta, (blank)
+
+Expected Outcome: Here is a list of your supports:
+                  The Doctor
+                  Rose Tyler
+                  K-9
+                  Bannakaffalatta
+
+  Actual Outcome: Here is a list of your supports:
+                  The Doctor
+                  Rose Tyler
+                  K-9
+                  Bannakaffalatta
+
+
+TEST 3:
+
+          Inputs: Kvothe, Bast, Denna, Sim, Wil, Auri, (blank)
+
+Expected Outcome: Here is a list of your supports:
+                  Kvothe
+                  Bast
+                  Denna
+                  Sim
+                  Wil
+                  Auri
+
+  Actual Outcome: Here is a list of your supports:
+                  Kvothe
+                  Bast
+                  Denna
+                  Sim
+                  Wil
+                  Auri
+
+
+
+TEST 4:
+
+          Inputs: Chocobo, Moogle, Cactaur, (blank)
+
+Expected Outcome: Here is a list of your supports:
+                  Chocobo
+                  Moogle
+                  Cactaur
+
+  Actual Outcome: Here is a list of your supports:
+                  Chocobo
+                  Moogle
+                  Cactaur
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+Page 2:
+
+Nouns: Questions about user's mental health, county of residence, phone numbers
+
+Verbs: Determine output with questions, determine appropriate phone numbers, display results
+
+
+I: Answer 1
+   Answer 2
+   County of Residence
+
+P: determine if user needs a Crisis Line or Talk-Line
+   determine if input is valid
+   determine Crisis Line phone number
+   
+   
+O: Appropriate phone number to call
+   or
+   Display error message
+   
+
+Pseudocode:
+DeterminePhoneNumbers
+determineCounty
+  initialize userCounty to ""
+  initialize crisisLine to ""
+  
+  prompt for userCounty with "What county do you live in?"
+  create array with all WI County crisis numbers in alphabetical order
+  
+  assign each phone number to a county 
+  IF userCounty is "Adams" THEN
+    crisisLine is crisisNumbers[0]
+    display message "You live in " + userCounty + " County. \nCall" + crisisLine + " for help."
+  ELSEIF userCounty is "Ashland" THEN
+    crisisLine is crisisNumbers[1]
+    display message "You live in " + userCounty + " County. \nCall" + crisisLine + " for help."
+  CONTINUE FOR ALL 72 WI COUNTIES
+  ELSE
+    display message "You entered: \"" + userCounty + "\" Please enter a county name. \nExample: \"Fond du Lac\", \"La Crosse\" or \"Chippewa\""
+  ENDIF
+END
+
+ENDdetermineCounty
+
+main
+
+  initialize answer1 to ""
+  initialize answer2 to ""
+
+  prompt for answer1 with "Are you struggling with your mental health right now? Please enter \"y\" or \"n\""
+  IF answer1 is "y" THEN
+    prompt for answer2 with "Are you having thoughts of suicide? Please enter \"y\" or \"n\""
+    IF answer2 is "y" THEN
+      determineCounty
+    ELSEIF answer2 is "n" THEN
+      display message "You can contact: \nSolstice Warmline: 608-244-5077 \nHopeline: 741741 (text to talk) \nUs Veterans Help Line: 800-273-8255 \nTheses lines are available 24/7"
+    ELSE  
+      display message "You entered: \"" + answer2 + "\". Please enter \"y\" or \"n\""
+    ENDIF
+  ELSEIF answer1 is "n" THEN
+    display message "If you ever need help regarding your mental health this will provide the appropriate number to call"
+  ELSE  
+    display message "You entered: \"" + answer1 + "\". Please enter \"y\" or \"n\""
+  ENDIF
+ENDmain
+
+
+
+Testing Inputs:
+
+TEST 1:
+
+          Inputs: y, y, Rusk
+
+Expected Outcome: You live in Rusk County. 
+                  Call 888-636-6655 for help.
+
+  Actual Outcome: You live in Rusk County. 
+                  Call 888-636-6655 for help.
+
+
+
+TEST 2:
+
+          Inputs: n
+
+Expected Outcome: If you ever need help regarding your mental health this will provide the appropriate number to call.
+                  Thank you
+
+  Actual Outcome: If you ever need help regarding your mental health this will provide the appropriate number to call.
+                  Thank you
+
+
+
+TEST 3:
+
+          Inputs: y, n
+
+Expected Outcome: You can contact: 
+                  Solstice Warmline: 608-244-5077 
+                  Hopeline: 741741 (text to talk) 
+                  US Veterans Help Line: 800-273-8255 
+                  Theses lines are available 24/7
+
+  Actual Outcome: You can contact: 
+                  Solstice Warmline: 608-244-5077 
+                  Hopeline: 741741 (text to talk) 
+                  US Veterans Help Line: 800-273-8255 
+                  Theses lines are available 24/7
+
+
+
+TEST 4:
+
+          Inputs: BOB
+
+Expected Outcome: You entered: "BOB". Please enter "y" or "n"
+
+  Actual Outcome: You entered: "BOB". Please enter "y" or "n"
+    
+
+    
+TEST 5:
+
+          Inputs: y, y, ALSO BOB
+
+Expected Outcome: You entered: "ALSO BOB" Please enter a county name. 
+                  Example: "Fond du Lac", "La Crosse" or "Chippewa"
+
+  Actual Outcome: You entered: "ALSO BOB" Please enter a county name. 
+                  Example: "Fond du Lac", "La Crosse" or "Chippewa"
+
