@@ -1,0 +1,87 @@
+body {
+  background-color: #8196A7;
+  color: #FFF;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", AppleGothic, sans-serif;
+  font-size: 120%;
+}
+
+header {
+  background-color: #426B8B;
+}
+
+body > form > .button {
+  background-color: #426B8B;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, serif;
+  font-size: 140%;
+  color: #FFF;
+  border: 1px solid #202223;
+}
+
+#List, .button{
+  background-color: #426B8B;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, serif;
+  font-size: 140%;
+  color: #FFF;
+  border: 1px solid #202223;
+}
+
+
+
+body > form > .button:hover,
+body > form > .button:focus{
+  background-color: #18105B;
+}
+
+.button:hover,
+.button:focus{
+  background-color: #18105B;
+}
+
+#List:hover,
+#List:focus{
+  background-color: #18105B;
+}
+
+
+header > img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  border: 2px solid #FFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav a {
+  background-color: #426B8B;
+  color: #FFF;
+  text-align: center;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, serif;
+  font-size:140%;
+  display: block;
+  text-decoration: none;
+  width: 100%;
+}
+
+nav a:hover, 
+nav a:focus {
+  background-color: #18105B;
+}
+
+h1, h2 {
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, serif;
+}
+
+footer {
+  color: #FFF;
+  background-color: #093455;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;  
+  clear: right;
+}
